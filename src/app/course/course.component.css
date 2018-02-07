@@ -1,0 +1,7 @@
+.ListOfCourse{
+ background-color: red;
+}
+
+.ListOfCourse li{
+  list-style: none;
+}
