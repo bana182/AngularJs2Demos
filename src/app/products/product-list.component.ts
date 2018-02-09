@@ -1,38 +1,45 @@
-import {Component} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
+import {IProduct} from './products';
+import {ProductService} from './product.service';
+
 @Component({
   selector:'pm-products',
   templateUrl:'./product-list.component.html',
+  styleUrls:['./product-list.component.css'],
 })
 
-export class ProductListComponent{
+export class ProductListComponent implements OnInit{
   pageTitle: string ="Product List";
   imageWidth:number= 50;
   imageMargin: number=2;
   showImage:boolean=false;
-  listFilter:string = 'cart';
-  products:any[]=[
-    {
-      "productId":2,
-      "productName":"Garden Cart",
-      "productCode":"GDN0023",
-      "releaseDate":"March 18,2016",
-      "description":"15 gallon capacity",
-      "price":32.99,
-      "starRating":4.2,
-      "imageUrl":"https://images-na.ssl-images-amazon.com/images/I/41EIG7cmcYL._SL500_AC_SS350_.jpg"
-    },
-    {
-      "productId":5,
-      "productName":"Hammer",
-      "productCode":"TBX-0048",
-      "releaseDate":"May 21,2016",
-      "description":"valerian steel",
-      "price":8.9,
-      "starRating":4.8,
-      "imageUrl":"https://target.scene7.com/is/image/Target/52123783_Alt02?wid=520&hei=520&fmt=pjpeg"
-    }
-  ];
+  _listFilter:string;
+  get listFilter(): string{
+    return this._listFilter;
+  }
+  set listFilter(value:string):string{
+    this._listFilter=value;
+    this.filteredProducts=this.listFilter ? this.performFilter(this.listFilter) : this.products;
+  }
+
+  filteredProducts:IProduct[];
+  products:IProduct[];
+  constructor(private _productService: ProductService){
+  }
   toggleImage():void{
     this.showImage=!this.showImage;
+  }
+
+  ngOnInit():void{
+    console.log('In OnInit');
+    this.products=this._productService.getProducts();
+    this.filteredProducts=this.products;
+  }
+  performFilter(filterBy:string):IPproduct[]{
+    filterBy=filterBy.toLocaleLowerCase();
+    return this.products.filter((product:IProduct)=>product.productName.toLocaleLowerCase().indexOf(filterBy)!==-1);
+  }
+  onRatingClicked(message:string):void{
+    this.pageTitle='Product List:'+message;
   }
 }
