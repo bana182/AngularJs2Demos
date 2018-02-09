@@ -1,0 +1,69 @@
+[
+  {
+    "productId":2,
+    "productName":"Garden Cart",
+    "productCode":"GDN-0023",
+    "releaseDate":"March 18,2016",
+    "description":"15 gallon capacity",
+    "price":32.99,
+    "starRating":4.2,
+    "imageUrl":"https://images-na.ssl-images-amazon.com/images/I/41EIG7cmcYL._SL500_AC_SS350_.jpg"
+  },
+  {
+    "productId":5,
+    "productName":"Hammer",
+    "productCode":"TBX-0048",
+    "releaseDate":"May 21,2016",
+    "description":"valerian steel",
+    "price":8.9,
+    "starRating":4.8,
+    "imageUrl":"https://target.scene7.com/is/image/Target/52123783_Alt02?wid=520&hei=520&fmt=pjpeg"
+  },
+  {
+    "productId":6,
+    "productName":"Gold",
+    "productCode":"TBX-0048",
+    "releaseDate":"May 21,2016",
+    "description":"valerian gold",
+    "price":8.9,
+    "starRating":3.2,
+    "imageUrl":"https://target.scene7.com/is/image/Target/52123783_Alt02?wid=520&hei=520&fmt=pjpeg"
+  },{
+    "productId":7,
+    "productName":"Jean",
+    "productCode":"JN-0049",
+    "releaseDate":"May 21,2016",
+    "description":"Levis",
+    "price":8.9,
+    "starRating":2.0,
+    "imageUrl":"http://www.oshkosh.com/dw/image/v2/AAMK_PRD/on/demandware.static/-/Sites-carters_master_catalog/default/dw6afdd97a/productimages/21788711.jpg?sw=2000"
+  },{
+    "productId":9,
+    "productName":"Shoes",
+    "productCode":"SH-0040",
+    "releaseDate":"May 21,2016",
+    "description":"Red chief",
+    "price":8.9,
+    "starRating":4.0,
+    "imageUrl":"https://5.imimg.com/data5/NN/OU/MY-34616979/red-chief-men-shoes-250x250.jpg"
+  },{
+    "productId":6,
+    "productName":"watch",
+    "productCode":"WTCH-0068",
+    "releaseDate":"May 21,2016",
+    "description":"Fossil",
+    "price":8.9,
+    "starRating":4.5,
+    "imageUrl":"http://cdn.watchshop.com/profiler/thumb_cache/zoom/99966031_v_1492680918.jpg"
+  },{
+    "productId":6,
+    "productName":"Redmi",
+    "productCode":"XOMI-0079",
+    "releaseDate":"May 21,2016",
+    "description":"Xiaomi is Redmi",
+    "price":8.9,
+    "starRating":3.2,
+    "imageUrl":"https://pbs.twimg.com/profile_images/895641100391636994/hjhNT7Gq_400x400.jpg"
+  }
+
+]

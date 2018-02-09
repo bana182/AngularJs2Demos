@@ -1,10 +1,22 @@
 import {Injectable} from '@angular/core';
 import {IProduct} from './products';
-
+import {HttpClient,HttpErrorResponse} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/observable/throw';
 @Injectable()
 export class ProductService{
-  getProducts():IProduct[]{
-    return[
+  private _productUrl='./api/product/products.json';
+  constructor(private _http:HttpClient){}
+  private handleError(err: HttpErrorResponse){
+    console.log(err.message);
+    return observable.throw(err.message);
+  }
+  getProducts():Observable<IProduct[]>{
+      return this._http.get<IProduct[]>(this._productUrl).do(
+        data=>console.log('ALL:'+JSON.stringify(data))).catch(this.handleError);
+    /*return[
       {
         "productId":2,
         "productName":"Garden Cart",
@@ -36,6 +48,6 @@ export class ProductService{
         "imageUrl":"https://target.scene7.com/is/image/Target/52123783_Alt02?wid=520&hei=520&fmt=pjpeg"
       }
 
-    ]
+    ]*/
   }
 }
